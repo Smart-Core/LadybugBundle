@@ -18,4 +18,12 @@ class RaulFraileLadybugBundle extends Bundle
         // load the global helpers
         \Ladybug\Loader::loadHelpers();
     }
+
+    public function boot()
+    {
+        if (function_exists('ladybug_set')) {
+            ladybug_set('general.show_backtrace', false);
+            ladybug_set('object.max_nesting_level', 5);
+        }
+    }
 }
