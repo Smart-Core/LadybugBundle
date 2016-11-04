@@ -41,10 +41,10 @@ class LadybugExtension extends \Twig_Extension
      */
     public function getFilters()
     {
-        return array(
+        return [
             new \Twig_SimpleFilter('ladybug_dump', [$this, 'ladybug_dump'], ['is_safe' => ['html']]),
             new \Twig_SimpleFilter('ld', [$this, 'ladybug_dump'], ['is_safe' => ['html']]),
-        );
+        ];
     }
 
     /**
@@ -54,10 +54,10 @@ class LadybugExtension extends \Twig_Extension
      */
     public function getFunctions()
     {
-        return array(
-            'ladybug_dump' => new \Twig_Function_Method($this, 'ladybug_dump', array('is_safe' => array('html'))),
-            'ld'  => new \Twig_Function_Method($this, 'ladybug_dump', array('is_safe' => array('html')))
-        );
+        return [
+            new \Twig_SimpleFunction('ladybug_dump', [$this, 'ladybug_dump'], ['is_safe' => ['html']]),
+            new \Twig_SimpleFunction('ld', [$this, 'ladybug_dump'], ['is_safe' => ['html']]),
+        ];
     }
 
     /**
