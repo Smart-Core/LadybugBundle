@@ -65,6 +65,14 @@ class LadybugDataCollector extends DataCollector
     }
 
     /**
+     * Resets this data collector to its initial state.
+     */
+    public function reset()
+    {
+        $this->data = ['vars' => $this->data['vars']];
+    }
+
+    /**
      * Returns the name of the debug collector.
      *
      * @return string
